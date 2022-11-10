@@ -17,7 +17,7 @@ jobs:
       - name: Print the Cloud Formation Linter Version & run Linter.
         continue-on-error: true
         run: |
-          cfn-lint -t *.yml -f sarif -b
+          cfn-lint -t *.yml -f sarif -b > snyk.sarif
           pwd
           ls -altr
       - name: Print the Details.
