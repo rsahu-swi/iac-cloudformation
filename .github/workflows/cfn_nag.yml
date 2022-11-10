@@ -14,4 +14,4 @@ jobs:
         uses: stelligent/cfn_nag@master
         with:
           input_path: .
-          extra_args: --fail-on-warnings -o json
+          extra_args: --fail-on-warnings
