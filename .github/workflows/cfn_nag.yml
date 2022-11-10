@@ -3,7 +3,7 @@ name: cfn-nag-action
 on: [push]
 
 jobs:
-  cloudformation-linter:
+  cloudformation-nag:
     runs-on: ubuntu-latest
 
     steps:
