@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   cloudformation-linter:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - name: Checkout
@@ -16,6 +16,6 @@ jobs:
 
       - name: Print the Cloud Formation Linter Version & run Linter.
         run: |
-          SETOPT -s globstar
+          setopt -s globstar
           cfn-lint --version
-          cfn-lint -t -g *.yml            
+          cfn-lint -t *.yml            
