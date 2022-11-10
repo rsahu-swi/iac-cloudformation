@@ -2,12 +2,13 @@ name: Snyk Infrastructure as Code
 on: push
 jobs:
   snyk-analysis:
+    strategy:
+      matrix:
+        files: [api-service.json,aurora.yml,bastion.yml,billing-alerts.yml,db.yml,elastic-beanstalk.yml,elasticache.yml,fargate-service.yml,fargate.yml,single-instance.json,vpc.json]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Run Snyk to check configuration files for security issues
-        # Snyk can be used to break the build when it detects security issues.
-        # In this case we want to upload the issues to GitHub Code Scanning
         continue-on-error: true
         uses: snyk/actions/iac@master
         env:
@@ -19,7 +20,7 @@ jobs:
           # Add the path to the configuration file that you would like to test.
           # For example `deployment.yaml` for a Kubernetes deployment manifest
           # or `main.tf` for a Terraform configuration file
-          file: bastion.yml
+          file: ${{ matrix.files }}
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v2
         with:
