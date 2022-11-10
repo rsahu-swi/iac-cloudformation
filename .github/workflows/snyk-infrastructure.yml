@@ -2,9 +2,6 @@ name: Snyk Analysis
 on: push
 jobs:
   snyk-analysis:
-    strategy:
-      matrix:
-        files: [api-service.json,aurora.yml,bastion.yml,billing-alerts.yml,db.yml,elastic-beanstalk.yml,elasticache.yml,fargate-service.yml,fargate.yml,single-instance.json,vpc.json]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
