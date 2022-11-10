@@ -1,4 +1,4 @@
-name: Snyk Infrastructure as Code
+name: Snyk Analysis
 on: push
 jobs:
   snyk-analysis:
