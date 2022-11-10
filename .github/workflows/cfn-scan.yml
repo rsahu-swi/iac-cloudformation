@@ -16,6 +16,6 @@ jobs:
 
       - name: Print the Cloud Formation Linter Version & run Linter.
         run: |
-          setopt -s globstar # enable globbing
+          setopt -s globstar
           cfn-lint --version
           cfn-lint -t ./**/*.yml            
