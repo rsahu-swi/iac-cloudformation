@@ -29,3 +29,8 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: snyk.sarif        
+      - name: Accidentally upload to the same artifact via multiple jobs
+        uses: actions/upload-artifact@v3
+        with:
+          name: cnf-lint-artifact
+          path: ${{ github.workspace }}/snyk.sarif
