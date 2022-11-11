@@ -15,3 +15,8 @@ jobs:
         with:
           input_path: .
           extra_args: --fail-on-warnings
+      - name: Archive output
+        uses: actions/upload-artifact@v3
+        with:
+          name: cnf-nag-artifact
+          path: ${{ github.workspace }}/cfn_nag.out
