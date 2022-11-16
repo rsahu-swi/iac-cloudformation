@@ -19,7 +19,7 @@ jobs:
         run: |
           ls -altr
           pwd
-          cfn-lint -t *.yml -f sarif -b -z cfn_custom_rule.txt > cfn_lint.sarif 
+          cfn-lint -t *.yml -f sarif -b -z .github/workflows/cfn_custom_rule.txt > cfn_lint.sarif 
           cat cfn_lint.sarif
           cat cfn_custom_rule.txt
          
