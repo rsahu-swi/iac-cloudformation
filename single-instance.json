@@ -485,7 +485,7 @@
       "Type": "AWS::EC2::Instance",
       "Properties": {
         "InstanceType": {
-          "Ref": "InstanceType"
+          "Value": "m4.10xlarge"
         },
         "SecurityGroups": [
           {
