@@ -17,7 +17,7 @@ jobs:
       - name: Run CFN Lint
         continue-on-error: true
         run: |
-          cfn-lint -t single-instance.json -f sarif -b --custom-rules cfn_lint_custom_rule.txt > cfn_lint.sarif
+          cfn-lint -t single-instance.json -f sarif -b --custom-rules cfn_lint_custom_rule.txt --output-file cfn_lint.sarif
           cat cfn_lint.sarif
          
       - name: Upload result to GitHub Code Scanning
