@@ -19,9 +19,9 @@ jobs:
         run: |
           ls -altr
           pwd
-          cfn-lint -t *.yml -f sarif -b -z cfn_lint_custom_rule.txt 
+          cfn-lint -t *.yml -f sarif -b -z cfn_lint_custom_rule.txt > cfn_lint.sarif
           cat cfn_lint.sarif
-          cat cfn_custom_rule.txt
+          cat cfn_lint_custom_rule.txt
          
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v2
