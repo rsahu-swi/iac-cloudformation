@@ -17,20 +17,15 @@ jobs:
       - name: Print the Cloud Formation Linter Version & run Linter.
         continue-on-error: true
         run: |
-          cfn-lint -t *.yml -f sarif -b > snyk.sarif
-          pwd
-          ls -altr
-      - name: Print the Details.
-        continue-on-error: true
-        run: |
-          pwd
-          ls -altr          
+          cfn-lint -t *.yml -f sarif -b > cfn_lint.sarif -z cfn_custom_rule.txt
+         
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: snyk.sarif        
-      - name: Accidentally upload to the same artifact via multiple jobs
+          sarif_file: cfn_lint.sarif  
+
+      - name: Archive the result so it can be downloaded
         uses: actions/upload-artifact@v3
         with:
           name: cnf-lint-artifact
-          path: ${{ github.workspace }}/snyk.sarif
+          path: ${{ github.workspace }}/cfn_lint.sarif

@@ -1,0 +1,1 @@
+AWS::EC2::Instance InstanceType != "p3.2xlarge"
