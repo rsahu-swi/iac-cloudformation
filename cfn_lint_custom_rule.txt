@@ -1,1 +1,1 @@
-AWS::EC2::Instance InstanceType != "m4.10xlarge" WARN "Custom Error for Ec2 Instance Type"
+AWS::EC2::Instance InstanceType != "m4.10xlarge" ERROR "Custom Error for Ec2 Instance Type"
