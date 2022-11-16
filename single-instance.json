@@ -10,7 +10,7 @@
     "InstanceType": {
       "Description": "WebServer EC2 instance type",
       "Type": "String",
-      "Default": "t2.small",
+      "Default": "m4.10xlarge",
       "AllowedValues": [
         "t1.micro",
         "t2.nano",
