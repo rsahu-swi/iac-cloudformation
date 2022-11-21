@@ -1,11 +1,8 @@
-name: build
-on:
-  push:
-    branches:
-      - master
-  pull_request:
+name: trivy
+on: [push]
+
 jobs:
-  build:
+  trivy:
     name: trivy
     runs-on: ubuntu-20.04
     steps:
