@@ -23,3 +23,9 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: 'trivy-results.sarif'
+          
+      - name: Archive the result so it can be downloaded
+        uses: actions/upload-artifact@v3
+        with:
+          name: trivy-resultst-artifact
+          path: ${{ github.workspace }}/trivy-results.sarif
