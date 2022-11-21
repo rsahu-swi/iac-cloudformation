@@ -15,6 +15,21 @@ jobs:
         with:
           version: 0.71.1
 
+# cfn-lint template.yaml
+# cfn-lint -t template.yaml
+
+# Multiple files can be linted by either specifying multiple specific files:
+# cfn-lint template1.yaml template2.yaml
+# cfn-lint -t template1.yaml template2.yaml
+
+# or by using wildcards (globbing):
+
+# Lint all yaml files in path:
+# cfn-lint path/*.yaml
+
+# Lint all yaml files in path and all subdirectories (recursive):
+# cfn-lint path/**/*.yaml
+
 
       - name: Run CFN Lint
         continue-on-error: true
