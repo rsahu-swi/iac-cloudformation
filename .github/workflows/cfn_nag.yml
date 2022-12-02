@@ -15,7 +15,11 @@ jobs:
         with:
           input_path: .
           extra_args: --fail-on-warnings --output-format sarif 
-          output_path: cfn_nag.sarif
+#           output_path: cfn_nag.sarif
+
+      - name: running command
+        run: ls -altr
+        
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v2.1.32
         with:
