@@ -16,8 +16,12 @@ jobs:
           input_path: .
           extra_args: --fail-on-warnings --output-format sarif 
           output_path: cfn_nag.sarif
+      - name: Upload result to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v2.1.32
+        with:
+          sarif_file: cfn_nag.sarif      
       - name: Archive output
         uses: actions/upload-artifact@v3
         with:
           name: cnf-nag-artifact
-          path: ${{ github.workspace }}/cfn_nag.out
+          path: ${{ github.workspace }}/cfn_nag.sarif
