@@ -23,9 +23,9 @@ jobs:
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v2.1.32
         with:
-          sarif_file: cfn_nag.sarif      
+          sarif_file: cfn_nag.out      
       - name: Archive output
         uses: actions/upload-artifact@v3
         with:
           name: cnf-nag-artifact
-          path: ${{ github.workspace }}/cfn_nag.sarif
+          path: ${{ github.workspace }}/cfn_nag.out
