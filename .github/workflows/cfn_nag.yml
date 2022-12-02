@@ -14,7 +14,8 @@ jobs:
         uses: stelligent/cfn_nag@master
         with:
           input_path: .
-          extra_args: --fail-on-warnings
+          extra_args: --fail-on-warnings --output-format sarif 
+          output_path: cfn_nag.sarif
       - name: Archive output
         uses: actions/upload-artifact@v3
         with:
