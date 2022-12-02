@@ -12,3 +12,6 @@ jobs:
       with:
         cloudformation_directory: "."
         scanner: "all"
+    
+    - name: running command
+      run: ls -altr
