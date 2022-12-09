@@ -15,3 +15,18 @@ jobs:
     
     - name: running command
       run: ls -altr
+      
+    - name: Upload result to GitHub Code Scanning
+      uses: github/codeql-action/upload-sarif@v2.1.32
+      with:
+        sarif_file: cfn_lint.sarif  
+        
+    - name: Upload result to GitHub Code Scanning
+      uses: github/codeql-action/upload-sarif@v2.1.32
+      with:
+        sarif_file: result.sarif 
+        
+    - name: Upload result to GitHub Code Scanning
+      uses: github/codeql-action/upload-sarif@v2.1.32
+      with:
+        sarif_file: checkov.sarif         
