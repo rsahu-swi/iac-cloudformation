@@ -2,6 +2,7 @@ name: sierra-cfn-scan
 
 on: [push]
 
+
 jobs:
   ## all scans
   sierra-cfn-scan:
