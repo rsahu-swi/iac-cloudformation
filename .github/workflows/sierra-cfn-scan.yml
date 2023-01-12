@@ -12,22 +12,3 @@ jobs:
     - uses: rsahu-swi/sierra-cfn-scan@main
       with:
         cloudformation_directory: "."
-        scanner: "all"
-    
-    - name: running command
-      run: ls -altr
-      
-    - name: Upload result to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v2.1.32
-      with:
-        sarif_file: cfn_lint.sarif  
-        
-    - name: Upload result to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v2.1.32
-      with:
-        sarif_file: cfn_nag.sarif 
-        
-    - name: Upload result to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v2.1.32
-      with:
-        sarif_file: cfn_checkov.sarif     
