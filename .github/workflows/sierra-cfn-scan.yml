@@ -11,4 +11,4 @@ jobs:
     - uses: actions/checkout@v2
     - uses: rsahu-swi/sierra-cfn-scan@main
       with:
-        cloudformation_directory: "."
+        cloudformation_directory: "./"
